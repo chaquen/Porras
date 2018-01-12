@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lightning All Star</title>
+        <!-- Load Roboto font -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- Load css styles -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/pluton.css" />
+        
+        <!--Slide-->
+        <link href="slide/css/flexslider.css" rel="stylesheet" type="text/css"/>
+        
+        
+        <!--[if IE 7]>
+            <link rel="stylesheet" type="text/css" href="css/pluton-ie7.css" />
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+        
+        <!-- Fav and touch icons -->
+        <link rel="shortcut icon" href="images/ico/ico.ico">
+        
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+        <script type="text/javascript" src="js/jquery.cslider.js"></script>
+        <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="js/jquery.inview.js"></script>
+        <!-- Load google maps api and call initializeMap function defined in app.js -->
+        <script async="" defer="" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap&key=AIzaSyAvBjHhysR6cJ8ska8YiW9_byRJMYezf_0"></script>
+        <!-- css3-mediaqueries.js for IE8 or older -->
+        <!--[if lt IE 9]>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+        
+        
+        
+        <!--Slide-->
+        <script src="slide/js/flexslider/jquery.flexslider.js" type="text/javascript"></script>
+        <script src="slide/js/flexslider/setting.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        
+        
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container" id="conta1">
+                    <a href="index.html" class="brand">
+                        <img src="images/logo.png" alt="Logo" />
+                        <!-- This is website logo -->
+                    </a>
+                    <!-- Navigation button, visible on small resolution -->
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon-menu"></i>
+                    </button>
+                    <!-- Main navigation -->
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav" id="top-navigation">
+                            <li><a href="nosotros.html">¿Quienes Somos?</a></li>
+                            <li><a href="portafolio.html">Servicios</a></li>
+                            <li><a href="galeria.html">Competencias</a></li>
+                            <li><a href="tienda.html">Tienda</a></li>
+                            <li><a href="">Login</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <!-- End main navigation -->
+                </div>
+            </div>
+        </div
+        <div id="contact">
+            <div class="triangle"></div>
+            <div class="section secondary-section">
+                <div class="container">
+                    <div class="title">
+                        <h1>Contactenos</h1>
+                        <p>Para nosotros es muy importante tu opinion, dejanos tus comentarios a continuación.</p>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <div class="map-canvas" id="map-canvas">Loading map...</div>
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span5 contact-form centered">
+                                <h3>Dejanos tus datos</h3>
+                                <div id="successSend" class="alert alert-success invisible">
+                                    <strong>Felicidades!</strong>Tu mensaje fue enviado.</div>
+                                <div id="errorSend" class="alert alert-error invisible">Se produjo un error.</div>
+                                <form id="contact-form" action="php/mail.php">
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input class="span12" type="text" id="name" name="name" placeholder="Nombre" />
+                                            <div class="error left-align" id="err-name">Por favor ingrese un nombre.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input class="span12" type="email" name="email" id="email" placeholder="Ingrese el correo" />
+                                            <div class="error left-align" id="err-email">Por favor ingrese un correo valido.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <textarea class="span12" name="comment" id="comment" placeholder="Comentarios"></textarea>
+                                            <div class="error left-align" id="err-comment">Por favor ingrese comentarios.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <button id="send-mail" class="message-btn">Enviar Mensaje</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="footer">
+                    <table class="tablaFooter">
+                        <tr>
+                            <td>
+                                <h2>PBX 7644079</h2>
+                            </td>
+                            <td>
+                                <img src="images/what.png">
+                                <h2>3193668398</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h5>PARQUE EL LONGROÑO FRENTE AL CONJUNTO GIRASOL</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h4>CIUDAD VERDE - SOACHA CUNDINAMARCA</h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row-fluid">
+                        
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/groups/184038908452295/about/">
+                                    <span class="icon-facebook-circled"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="icon-twitter-circled"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/lightningallstar/?hl=es">
+                                    <span class="icon-linkedin-circled"></span>
+                                </a>
+                            </li>                            
+                        </ul>
+                        <h2>SIGUENOS</h2>
+                    </div>
+                </div>
+        <div class="footer">
+            <p>Diseñado por <a href="https://www.mohansoft.com">MohanSoft</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>  
+    </body>
+</html>
