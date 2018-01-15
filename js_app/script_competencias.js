@@ -15,7 +15,7 @@ function dibujar_competencias(datos){
 	
 	//aqui construyo las competencias
 	var sp=document.getElementById("single-project");
-	sp.innerHTML="";	
+	//sp.innerHTML="";	
 	for(var c in datos){
 		var div=document.createElement("div");
 		div.setAttribute("id","slidingDiv_"+Number(c));
