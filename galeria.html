@@ -28,6 +28,8 @@ and open the template in the editor.
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
         <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="images/ico/ico.ico">
+
+       
     </head>
     <body>
         <div class="navbar">
@@ -65,19 +67,24 @@ and open the template in the editor.
                 </div>
                 <ul class="nav nav-pills">
                     
-                    <li class="filter" data-filter="web">
+                    <!--<li class="filter" data-filter="web">-->
+                    <li class="filter" data-filter="locales">
                         <a href="#noAction">LOCALES</a>
                     </li>
-                    <li class="filter" data-filter="photo">
+                    <!--<li class="filter" data-filter="photo">-->
+                    <li class="filter" data-filter="distritales">    
                         <a href="#noAction">DISTRITALES</a>
                     </li>
-                    <li class="filter" data-filter="identity">
+                    <!--<li class="filter" data-filter="identity">-->
+                    <li class="filter" data-filter="nacionales">
                         <a href="#noAction">NACIONALES</a>
                     </li>
-                    <li class="filter" data-filter="all">
+                    <!--<li class="filter" data-filter="all">-->
+                    <li class="filter" data-filter="internacionales">
                         <a href="#noAction">INTERNACIONALES</a>
                     </li>
-                    <li class="filter" data-filter="photo">
+                    <!--<li class="filter" data-filter="photo">-->
+                    <li class="filter" data-filter="eventos">
                         <a href="#noAction">EVENTOS</a>
                     </li>
                     <li class="filter" data-filter="all">
@@ -91,22 +98,22 @@ and open the template in the editor.
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/U8hBIUH6i_Q" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="span6">
-                            <div class="project-description">
+                            <div class="project-description"> 
                                 <div class="project-title clearfix">
                                     <h3>Webste for Some Client</h3>
                                     <span class="show_hide close">
                                         <i class="icon-cancel"></i>
                                     </span>
                                 </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
+                                <div class="project-info"> 
+                                    <div> 
+                                        <span>Client</span>Som Client Name</div>
+                                    <div> 
                                         <span>Date</span>July 2013</div>
                                     <div>
                                         <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
+                                    <div> 
+                                    <span>Link</span>http://examplecomp.com</div>
                                 </div>
                                 <p>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</p>
                             </div>
@@ -121,7 +128,7 @@ and open the template in the editor.
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">
-                                    <h3>Webste for Some Client</h3>
+                                    <h3>ummmm</h3>
                                     <span class="show_hide close">
                                         <i class="icon-cancel"></i>
                                     </span>
@@ -344,7 +351,7 @@ and open the template in the editor.
                                 <a href="#single-project" class="more show_hide" rel="#slidingDiv">
                                     <i class="icon-plus"></i>
                                 </a>
-                                <h3>Thumbnail label</h3>
+                                <h3>prueba 1</h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask"></div>
                             </div>
@@ -541,6 +548,37 @@ and open the template in the editor.
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
         })();
+        </script>
+        <script type="text/javascript" src="js_app/funciones/utilidades.js"></script>
+        <script type="text/javascript" src="js_app/funciones/peticiones_ajax.js"></script>
+        <script type="text/javascript" src="js_app/funciones/formularios.js"></script>
+        <script type="text/javascript" src="js_app/funciones/CrudBase.js"></script>
+        <script type="text/javascript" src="js_app/funciones/formatos.js"></script>
+        <script type="text/javascript" src="js_app/prototipos/prototipos.js"></script>
+        <script type="text/javascript" src="js_app/globales.js"></script>
+        <script type="text/javascript" src="js_app/script_competencias.js"></script>
+        <script type="text/javascript">
+            
+            //posts.hide();
+            $( ".filter" ).click(function() { 
+                var posts = $('.span4');
+            // Get data of category
+                var customType = $( this ).data('filter'); // category
+                console.log(customType);
+                console.log(posts.length); // Length of articles
+                
+                posts
+                    .hide()
+                    .filter(function () {
+
+                        console.log($(this).data('cat') === customType);
+                        if(customType=="all"){
+                            return true;
+                        }
+                        return $(this).data('cat') === customType;
+                    })
+                    .show();
+            });
         </script>
         <!--End of Tawk.to Script-->
 </html>

@@ -300,6 +300,7 @@ $("#send-mail").click(function () {
     
     //Animate thumbnails 
     jQuery('.thumbnail').one('inview', function (event, visible) {
+        
         if (visible == true) {
             jQuery(this).addClass("animated fadeInDown");
         } else {
