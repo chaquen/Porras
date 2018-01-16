@@ -62,25 +62,25 @@ and open the template in the editor.
                 
                 <ul class="nav nav-pills">
                     
-                    <li class="filter" data-filter="web">
+                    <li class="filter" data-filter="uniformes">
                         <a href="#noAction">UNIFORMES</a>
                     </li>
-                    <li class="filter" data-filter="photo">
+                    <li class="filter" data-filter="busos">
                         <a href="#noAction">BUSOS</a>
                     </li>
-                    <li class="filter" data-filter="identity">
+                    <li class="filter" data-filter="tops">
                         <a href="#noAction">TOPS</a>
                     </li>
-                    <li class="filter" data-filter="all">
+                    <li class="filter" data-filter="short">
                         <a href="#noAction">SHORT</a>
                     </li>
-                    <li class="filter" data-filter="photo">
+                    <li class="filter" data-filter="bows">
                         <a href="#noAction">BOWS</a>
                     </li>
-                    <li class="filter" data-filter="photo">
+                    <li class="filter" data-filter="personalizados">
                         <a href="#noAction">PERSONALIZADOS</a>
                     </li>
-                    <li class="filter" data-filter="all">
+                    <li class="filter" data-filter="varios">
                         <a href="#noAction">VARIOS</a>
                     </li>
                 </ul>
@@ -456,9 +456,10 @@ and open the template in the editor.
                         <p>Te interesa conocer mas del mundo <b>Lightning All Star</b> dejanos tu correo electronico y recibiras mas información de todas nuestras actividades.</p>
                     </div>
                     <div class="span7">
-                        <form class="inline-form">
+                       <form class="inline-form" id="form-suscribe" >
                             <input type="email" name="email" id="nlmail" class="span8" placeholder="Ingresa el correo" required />
-                            <button id="subscribe" class="button button-sp">Suscribete</button>
+                            <button id="subscribe" class="button button-sp" type="button">Suscribete</button>
+                            
                         </form>
                         <div id="err-subscribe" class="error centered">Por favor ingresa.</div>
                     </div>
@@ -544,4 +545,36 @@ and open the template in the editor.
         })();
         </script>
         <!--End of Tawk.to Script-->
+        <script type="text/javascript" src="js_app/funciones/utilidades.js"></script>
+        <script type="text/javascript" src="js_app/funciones/peticiones_ajax.js"></script>
+        <script type="text/javascript" src="js_app/funciones/formularios.js"></script>
+        <script type="text/javascript" src="js_app/funciones/CrudBase.js"></script>
+        <script type="text/javascript" src="js_app/funciones/formatos.js"></script>
+        <script type="text/javascript" src="js_app/prototipos/prototipos.js"></script>
+        <script type="text/javascript" src="js_app/globales.js"></script>
+        <script type="text/javascript" src="js_app/script_tienda.js"></script>
+        <script type="text/javascript" src="js_app/suscribir.js"></script>
+        <script type="text/javascript">
+            
+            //posts.hide();
+            $( ".filter" ).click(function() { 
+                var posts = $('.span4');
+            // Get data of category
+                var customType = $( this ).data('filter'); // category
+                console.log(customType);
+                console.log(posts.length); // Length of articles
+                
+                posts
+                    .hide()
+                    .filter(function () {
+
+                        console.log($(this).data('cat') === customType);
+                        if(customType=="all"){
+                            return true;
+                        }
+                        return $(this).data('cat') === customType;
+                    })
+                    .show();
+            });
+        </script>
 </html>
